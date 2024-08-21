@@ -1,0 +1,83 @@
+/* Overall container styling */
+.container-fluid {
+  padding: 20px;
+  max-width: 1200px; /* Limit the maximum width for better readability */
+  margin: 0 auto; /* Center align the container */
+}
+
+h1.text-center {
+  background-color: #17a2b8; /* Blue background */
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 24px; /* Larger title font size */
+}
+
+.claims-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between cards */
+}
+
+.claim-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  max-width: 100%;
+}
+
+.claim-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.claim-details {
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+}
+
+.claim-row {
+  display: table-row;
+}
+
+.claim-label, .claim-value {
+  display: table-cell;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.claim-label {
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  width: 30%; /* Adjust width as necessary */
+}
+
+.claim-value {
+  width: 70%;
+  border-bottom: 1px solid #ddd;
+}
+
+.claim-status-button {
+  display: inline-block;
+  background-color: darkgreen; /* Blue background for the button-like element */
+  color: rgb(255, 255, 255);
+  padding: 8px 16px; /* Larger padding for a button-like appearance */
+  border-radius: 5px; /* Rounded corners for button look */
+  font-weight: bold;
+  text-align: center;
+  cursor: default; /* Show default cursor to indicate non-clickable */
+  user-select: none; /* Prevent text selection */
+  font-size: 16px; /* Font size for button text */
+  margin-top: -5px; /* Margin to separate from other elements */
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px; /* Ensure the error message is visible */
+}

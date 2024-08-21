@@ -1,0 +1,126 @@
+.navbar {
+    position: fixed;
+    top: -740px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+  }
+  
+  .hero-image {
+    background-color: lightcyan;
+    background-image: url('http://localhost:3000/static/media/image.1fe44c83dab456afa711.jpg');
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 50vh; /* Adjust if needed */
+    }
+  }
+  
+  .container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+  
+  .md\:hidden {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .hidden.md\:flex {
+      display: flex;
+    }
+    .md\:hidden {
+      display: none;
+    }
+  }
+  
+  .image-section {
+    position: absolute;
+    margin-top: -580px;
+    margin-left: 130px;
+    gap: 100px;
+  }
+  
+  .image-section img {
+    transition: transform 0.3s ease;
+  }
+  
+  .image-section img:hover {
+    transform: scale(1.3);
+  }
+  
+  .heading
+  {
+    position: absolute;
+    margin-top: -670px;
+    margin-left: 210px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+  }
+  
+  .content
+  {
+      position: absolute;
+      margin-top: -400px;
+      margin-left: 70px;
+      width: 50%;
+      height: 50%;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .content h1
+  {
+      font-size: 4rem;
+      color:  #fff;
+  }
+  
+  .content p
+  {
+      font-size: 30px;
+      font-weight: 200;
+      text-transform: uppercase;
+      margin-bottom: 1.6rem;
+      color: #fff;
+  }
+  
+  #gold{
+      color: goldenrod;
+  }
+  
+  @media screen and (max-width:640px)
+  {
+      .content h1
+      {
+          font-size: 3rem;
+      }
+  
+      .content p
+      {
+          font-size: 1.4rem;
+          margin-bottom: 1.6rem;
+      }
+  }
+  
+  #video
+  {
+    position: relative;
+    margin-top: 300px;
+  }

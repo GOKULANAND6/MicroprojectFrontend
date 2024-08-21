@@ -1,0 +1,164 @@
+
+table{
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+#all
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 1250px;
+}
+
+h1
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 1000;
+    font-size: xx-large;
+}
+
+#submit
+{
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+#salbutton
+{
+    margin-top: -38px;
+}
+
+#addbutton
+{
+    margin-left: 1080px;
+}
+
+#delbutton
+{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: red;
+}
+
+#updbutton
+{
+    margin-top: 0px;
+    margin-left: 0px;
+    color: green;
+}
+
+#policybutton
+{
+    color: darkred;
+    font-weight: 800;
+    background-color: lightskyblue;    
+}
+
+#body
+{
+    overflow-x: auto;
+}
+
+#check
+{
+    margin-left: 10px;
+    font-size: xx-large;
+}
+.container {
+    padding: 20px;
+  }
+  
+  .claims-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .claim-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+  
+  .claim-table {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 8px;
+  }
+  
+  .claim-row {
+    display: contents; /* Makes each row act like a table row */
+  }
+  
+  .claim-label {
+    font-weight: bold;
+  }
+  
+  .claim-value {
+    padding-left: 10px;
+  }
+  
+  .image-gallery {
+    margin-top: 16px;
+  }
+  
+  .image-container {
+    margin-bottom: 16px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+
+.profile-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-table td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.profile-icon {
+  font-size: 24px;
+  color: #007bff;
+  text-align: center;
+}
+
+.profile-detail {
+  padding-left: 12px;
+}
+
+.profile-label {
+  font-weight: bold;
+  margin-left: -800px;
+}
+
+.profile-value {
+  font-size: 16px;
+  margin-left: 10px;
+  margin-top: -22px;
+}
+
+.profile-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-table tr:last-child {
+  border-bottom: none;
+}

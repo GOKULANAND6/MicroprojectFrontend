@@ -1,0 +1,82 @@
+/* Container styling */
+.file-claim-container {
+  background-color: #f4f7f6;
+  padding: 20px;
+  height: 170vh;
+}
+
+.profile-banner {
+  background: #17a2b8; /* btn-info color */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.banner-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Form wrapper styling */
+.form-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Heading styling */
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.form-group label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.form-group label .react-icons {
+  margin-right: 10px;
+  color: #007bff; /* Change this to match your icon color */
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Submit button styling */
+.btn-submit {
+  background-color: #007bff; /* Change this to match your btn-info color */
+  border: none;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3; /* Darker shade for hover */
+}

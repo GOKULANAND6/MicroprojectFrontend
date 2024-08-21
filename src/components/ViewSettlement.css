@@ -1,0 +1,74 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+  }
+  
+  .card-label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .card-value {
+    color: #666;
+  }
+  
+  .card-value.amount {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .card-value.status {
+    color: #dc3545;
+  }
+  

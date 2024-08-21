@@ -1,0 +1,52 @@
+.settlement-module {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .details-list {
+    margin-bottom: 20px;
+  }
+  
+  .details-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details-list li {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .details-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .detail-view {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .detail-view p {
+    margin: 5px 0;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  

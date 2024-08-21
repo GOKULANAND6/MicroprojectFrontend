@@ -1,0 +1,46 @@
+
+.view-cars-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f4f4f9;
+  border-radius: 8px;
+}
+
+.view-cars-banner {
+  display: flex;
+  align-items: center;
+  background-color: #17a2b8; /* Adjust if needed */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.view-cars-banner h1 {
+  font-family: 'Arial', sans-serif; 
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cars-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Arial', sans-serif; /* Consistent font family */
+}
+
+.cars-table th,
+.cars-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.cars-table th {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+.cars-table td {
+  background-color: #ffffff;
+}

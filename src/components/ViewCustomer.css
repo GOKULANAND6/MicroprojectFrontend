@@ -1,0 +1,107 @@
+/* Overall container styling */
+.container {
+    margin-top: 20px;
+  }
+  
+  /* Customer cards styling */
+  .customer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .customer-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .customer-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card header styling */
+  .customer-card-header {
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+  
+  .customer-card-header h2 {
+    font-size: 1.25rem;
+    color: #007bff;
+  }
+  
+  /* Card body styling */
+  .customer-card-body {
+    margin-bottom: 15px;
+  }
+  
+  .customer-detail {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .customer-detail strong {
+    color: #333;
+  }
+  
+  /* Card footer styling */
+  .customer-card-footer {
+    text-align: center;
+  }
+  
+  #policybutton {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  #policybutton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Title styling */
+  .text-bg-info {
+    background-color: #17a2b8;
+    color: #ffffff;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .go-back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .logo {
+    width: 40px; 
+    height: auto;
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    background-color: #17a2b8;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  #app2 {
+    color: #fff;
+    margin-left: 370px ;
+  }

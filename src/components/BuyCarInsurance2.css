@@ -1,0 +1,75 @@
+.banner {
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#body {
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  /* Form container styling */
+  .form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: auto;
+    max-width: 800px;
+  }
+  
+  /* Heading styling */
+  h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Label styling */
+  .form-group label {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .form-group label .react-icons {
+    margin-right: 8px;
+    color: #007bff;
+  }
+  
+  /* Input styling */
+  .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
