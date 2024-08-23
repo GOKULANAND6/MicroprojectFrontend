@@ -39,7 +39,7 @@ function Navbar2() {
       <nav className="navbar bg-white bg-opacity-80 rounded-b-lg shadow-md p-2">
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="text-xl font-bold text-gray-800">
-            <i className="fa fa-shield" style={{fontSize: '25px'}} aria-hidden="true"></i>
+            <i className="fa fa-shield" style={{fontSize: '25px'}} aria-hidden="true" ></i>
             Go Claim Insurance Pvt. Ltd
           </a>
           <div className="hidden md:flex space-x-4 items-center">

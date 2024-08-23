@@ -4,7 +4,7 @@ import './LoginCustomer.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function LoginCustomer() {
+function LoginAdmin() {
   const navigate = useNavigate();
   const [inputData, setInputData] = useState({
     admin_name: '',
@@ -50,7 +50,7 @@ function LoginCustomer() {
       {/* Title Banner */}
       <div className="login-banner">
         <MDBIcon fas icon="user-shield" className="banner-icon" />
-        <p className="banner-title">Admin Login</p>
+        <p className="banner-title" role='heading'>Admin Login</p>
       </div>
       
       <MDBRow>
@@ -89,6 +89,7 @@ function LoginCustomer() {
                 type='text'
                 size="lg"
                 name="admin_name"
+                placeholder='Admin Name'
                 value={inputData.admin_name}
                 onChange={(e) => setInputData({ ...inputData, admin_name: e.target.value })}
                 prepend={<MDBIcon fas icon="user" />}
@@ -100,6 +101,7 @@ function LoginCustomer() {
                 type='password'
                 size="lg"
                 name="admin_password"
+                placeholder='Password'
                 value={inputData.admin_password}
                 onChange={(e) => setInputData({ ...inputData, admin_password: e.target.value })}
                 prepend={<MDBIcon fas icon="lock" />}
@@ -121,4 +123,4 @@ function LoginCustomer() {
   );
 }
 
-export default LoginCustomer;
+export default LoginAdmin;

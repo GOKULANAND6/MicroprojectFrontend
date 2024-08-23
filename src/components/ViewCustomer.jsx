@@ -20,57 +20,52 @@ function ViewCustomer() {
   }, []);
 
   const handleGoBack = () => {
-    navigate(-1); // Go back to the previous page
+    navigate(-1);
   };
 
   return (
-    <div id="body" className="container">
-      <div className="banner">
+    <div className="view-cars-container">
+      <div className="view-cars-banner">
         <button className="go-back-button" onClick={handleGoBack}>
           <img src={Logo} alt="Logo" className="logo" />
         </button>
-        <h1 id="app2" className="text-center text-bg-info">
-          New Customer Details
-        </h1>
+        <h1 className="banner-title">Customer Details</h1>
       </div>
 
-      <div className="customer-cards">
-        {records.map((d, i) => (
-          <div key={i} className="customer-card">
-            <div className="customer-card-header">
-              <h2>Customer ID: {d.customer_id}</h2>
-            </div>
-            <div className="customer-card-body">
-              <div className="customer-detail">
-                <strong>Name:</strong> {d.customer_name}
-              </div>
-              <div className="customer-detail">
-                <strong>Email:</strong> {d.customer_email}
-              </div>
-              <div className="customer-detail">
-                <strong>Mobile:</strong> {d.customer_mobile}
-              </div>
-              <div className="customer-detail">
-                <strong>Address:</strong> {d.customer_address}
-              </div>
-              <div className="customer-detail">
-                <strong>Pincode:</strong> {d.customer_pincode}
-              </div>
-              <div className="customer-detail">
-                <strong>Date of Birth:</strong> {d.customer_dob}
-              </div>
-              <div className="customer-detail">
-                <strong>Age:</strong> {d.customer_age}
-              </div>
-            </div>
-            <div className="customer-card-footer">
-              <Link to="/viewpolicy">
-                <button id="policybutton" className="btn btn-info">View Policy</button>
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+      <table className="cars-table">
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Pincode</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {records.map((d, i) => (
+            <tr key={i}>
+              <td>{d.customer_id}</td>
+              <td>{d.customer_name}</td>
+              <td>{d.customer_email}</td>
+              <td>{d.customer_mobile}</td>
+              <td>{d.customer_address}</td>
+              <td>{d.customer_pincode}</td>
+              <td>{d.customer_dob}</td>
+              <td>{d.customer_age}</td>
+              <td>
+                <Link to={`/viewpolicy/${d.customer_id}`}>
+                  <button className="btn-info">View Policy</button>
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

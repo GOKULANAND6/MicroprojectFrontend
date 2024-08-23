@@ -8,7 +8,6 @@ function ViewClaim() {
   const [records, setRecords] = useState([]);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     axios
       .get("http://localhost:8051/claim/all")
@@ -21,75 +20,74 @@ function ViewClaim() {
   }, []);
 
   const handleGoBack = () => {
-    navigate(-1); 
+    navigate(-1);
+  };
+
+  const getStatusClass = (status) => {
+    switch (status) {
+      case 'Approved':
+        return 'status-approved';
+      case 'Rejected':
+        return 'status-rejected';
+      case 'Verifying':
+      case 'Validating':
+        return 'status-verifying-validating';
+      case 'Pending':
+        return 'status-pending';
+      default:
+        return '';
+    }
   };
 
   return (
-    <div id="body" className="container">
-      <header className="view-cars-banner bg-info">
+    <div className="view-claim-container">
+      <header className="view-claim-banner">
         <button className="go-back-button" onClick={handleGoBack}>
           <img src={Logo} alt="Logo" className="logo" />
         </button>
-        <h1 className="banner-title text-dark">Applied for Insurance Claim</h1>
+        <h1 className="banner-title">Applied for Insurance Claim</h1>
       </header>
 
-      <div className="claims-list">
-        {records.map((d, i) => (
-          <div key={i} className="claim-card">
-            <table>
-              <div className="claim-row">
-                <div className="claim-label">Claim Id:</div>
-                <div className="claim-value">{d.claim_id}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Claim Issue:</div>
-                <div className="claim-value">{d.claim_issue}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Customer Name:</div>
-                <div className="claim-value">{d.carinsurance?.customer?.customer_name}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Customer Email:</div>
-                <div className="claim-value">{d.carinsurance?.customer?.customer_email}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Customer Mobile:</div>
-                <div className="claim-value">{d.carinsurance?.customer?.customer_mobile}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Car Brand:</div>
-                <div className="claim-value">{d.car_make}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Car Name:</div>
-                <div className="claim-value">{d.car_name}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Car Model:</div>
-                <div className="claim-value">{d.car_model}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Car Year:</div>
-                <div className="claim-value">{d.car_year}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Car Registered On:</div>
-                <div className="claim-value">{d.car_buyingdate}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Car Number:</div>
-                <div className="claim-value">{d.car_number}</div>
-              </div>
-              <div className="claim-row">
-                <div className="claim-label">Claim Status:</div>
-                <div className="claim-value">{d.claim_status}</div>
-              </div>
-              </table>
-
-          </div>
-        ))}
-      </div>
+      <table className="claims-table">
+        <thead>
+          <tr>
+            <th>Claim Id</th>
+            <th>Claim Issue</th>
+            <th>Customer Name</th>
+            <th>Customer Email</th>
+            <th>Customer Mobile</th>
+            <th>Car Brand</th>
+            <th>Car Name</th>
+            <th>Car Model</th>
+            <th>Car Year</th>
+            <th>Car Registered On</th>
+            <th>Car Number</th>
+            <th>Claim Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {records.map((d, i) => (
+            <tr key={i} className={d.isNew ? 'new-claim' : ''}>
+              <td>{d.claim_id}</td>
+              <td>{d.claim_issue}</td>
+              <td>{d.carinsurance?.customer?.customer_name}</td>
+              <td>{d.carinsurance?.customer?.customer_email}</td>
+              <td>{d.carinsurance?.customer?.customer_mobile}</td>
+              <td>{d.car_make}</td>
+              <td>{d.car_name}</td>
+              <td>{d.car_model}</td>
+              <td>{d.car_year}</td>
+              <td>{d.car_buyingdate}</td>
+              <td>{d.car_number}</td>
+              <td>
+                <span className={`status-badge ${getStatusClass(d.claim_status)}`} id="claim_status">
+                  {d.claim_status}
+                </span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

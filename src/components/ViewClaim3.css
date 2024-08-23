@@ -10,7 +10,7 @@
 .view-cars-banner {
   display: flex;
   align-items: center;
-  background-color: #17a2b8; /* Adjust if needed */
+  background-color: #17a2b8;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -26,7 +26,7 @@
 .cars-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Arial', sans-serif; /* Consistent font family */
+  font-family: 'Arial', sans-serif;
 }
 
 .cars-table th,

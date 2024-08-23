@@ -1,13 +1,11 @@
-/* Container styling */
 .profile-container {
     padding: 20px;
     background: #f4f7f6;
     height: 100vh;
   }
   
-  /* Banner styling */
   .profile-banner {
-    background: #17a2b8; /* btn-info color */
+    background: #17a2b8;
     color: #ffffff;
     padding: 20px;
     border-radius: 8px;
@@ -22,7 +20,6 @@
     color: white;
   }
   
-  /* Profile card styling */
   .profile-card {
     background: #ffffff;
     border-radius: 8px;
@@ -39,10 +36,9 @@
     margin: 0;
     font-size: 20px;
     font-weight: bold;
-    color: #17a2b8; /* btn-info color */
+    color: #17a2b8;
   }
   
-  /* Table styling */
   .profile-table {
     width: 100%;
     border-collapse: collapse;
@@ -55,7 +51,7 @@
   
   .profile-icon {
     font-size: 24px;
-    color: #17a2b8; /* btn-info color */
+    color: #17a2b8;
   }
   
   .profile-detail {

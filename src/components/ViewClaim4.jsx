@@ -6,9 +6,14 @@ import Logo from './back.png';
 
 function ViewClaim4() {
   const [records, setRecords] = useState([]);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
+    fetchClaims();
+  }, []);
+
+  const fetchClaims = () => {
     axios
       .get("http://localhost:8051/claim/all")
       .then((response) => {
@@ -16,8 +21,9 @@ function ViewClaim4() {
       })
       .catch((err) => {
         console.log("Error fetching claims:", err);
+        setError("Error fetching claims.");
       });
-  }, []);
+  };
 
   const handleSettlementClick = (id, claim) => {
     const claimJson = JSON.stringify(claim);
@@ -28,14 +34,21 @@ function ViewClaim4() {
     navigate(-1);
   };
 
+  const handleClaimUpdated = (id) => {
+    // Fetch updated claims after a claim is settled
+    fetchClaims();
+  };
+
   return (
     <div id="body" className="container">
       <header className="view-cars-banner bg-info">
         <button className="go-back-button" onClick={handleGoBack}>
           <img src={Logo} alt="Logo" className="logo" />
         </button>
-        <h1 className="banner-title text-dark">Applied for Insurance Claim</h1>
+        <h1 className="banner-title text-dark">Amount Settlement</h1>
       </header>
+
+      {error && <div className="error">{error}</div>}
 
       <div className="claims-list">
         {records.map((d, i) => (
@@ -74,7 +87,7 @@ function ViewClaim4() {
               <div className="claim-detail">
                 <strong>Car Number:</strong> {d.car_number}
               </div>
-              <div className="claim-detail">
+              <div className={`card-status-button ${d.claim_status.toLowerCase()}`}>
                 <strong>Claim Status:</strong> {d.claim_status}
               </div>
             </div>
@@ -82,9 +95,9 @@ function ViewClaim4() {
               <button
                 className="btn btn-success"
                 onClick={() => handleSettlementClick(d.claim_id, d)}
-                disabled={d.claim_status === "credited" || d.claim_status === "approved"}
+                disabled={d.claim_status === "Credited" || d.claim_status === "Approved"}
               >
-                {d.claim_status === "credited" ? "Amount Settled" : "Settle Amount"}
+                {d.claim_status === "Credited" ? "Payment Done" : "Settle Amount"}
               </button>
             </div>
           </div>

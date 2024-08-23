@@ -20,11 +20,11 @@ function ViewClaim3() {
   }, []);
 
   return (
-    <div className="view-cars-container" ide="viewclaim3">
-        <header className="view-cars-banner bg-info">
+    <div className="view-cars-container" id="viewclaim3">
+      <header className="view-cars-banner bg-info">
         <h1 className="banner-title text-dark center">Applied Claim Details</h1>
       </header>
-        <div className="container">
+      <div className="container">
         <table className="cars-table">
           <thead>
             <tr>
@@ -39,7 +39,6 @@ function ViewClaim3() {
               <th>Action</th>
             </tr>
           </thead>
-
           <tbody>
             {records.map((d, i) => (
               <tr key={i}>
@@ -53,14 +52,18 @@ function ViewClaim3() {
                 <td>{d.claim_status}</td>
                 <td>
                   <Link to={`/viewclaim1/${d.claim_id}`}>
-                    <button className="btn btn-info">Process</button>
+                    <button 
+                      className="btn btn-info" 
+                      disabled={d.claim_status === "Approved"}
+                    >
+                      {d.claim_status === "Approved" ? "Approved" : "Process"}
+                    </button>
                   </Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
-            
       </div>
     </div>
   );

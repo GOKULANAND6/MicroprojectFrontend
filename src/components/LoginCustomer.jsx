@@ -52,7 +52,7 @@ function LoginCustomer() {
   };
 
   return (
-    <MDBContainer fluid className="p-3 my-5 h-custom">
+    <MDBContainer  className="p-3 my-5 h-custom">
       <div>
       <header className="view-cars-banner bg-info">   
         <button className="go-back-button" onClick={handleGoBack}>

@@ -66,7 +66,7 @@ function LandingPage() {
 
       <div className="heading">
         
-          <span id="gold">Buy Insurance</span>
+          <span id="gold" role='ins-head'>Buy Insurance</span>
         
       </div>
 

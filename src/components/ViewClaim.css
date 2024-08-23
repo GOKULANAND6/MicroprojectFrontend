@@ -1,74 +1,93 @@
-.container {
-  margin-top: 20px;
-}
-
-.claim-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+.view-claim-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
   padding: 20px;
-  transition: box-shadow 0.3s ease;
+  max-width: 1200px;
 }
 
-.claim-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.view-claim-banner {
+  display: flex;
+  align-items: center;
+  background-color: #17a2b8;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.claim-card-header {
-  border-bottom: 2px solid #007bff;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-}
-
-.claim-card-header h2 {
-  font-size: 1.5rem;
-  color: #007bff;
-}
-
-.claim-card-body {
-  margin-bottom: 150px;
-}
-
-.claim-detail {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.claim-detail strong {
-  color: #333;
-}
-
-.claim-card-footer {
-  text-align: center;
-}
-
-.btn {
-  font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 5px;
+.go-back-button {
+  background: none;
   border: none;
   cursor: pointer;
 }
 
-.btn-success {
-  background-color: #28a745;
-  color: #ffffff;
+.logo {
+  width: 40px;
+  height: 40px;
 }
 
-.btn-success:disabled {
-  background-color: #6c757d;
+.banner-title {
+  margin-left: 15px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.btn-success:hover:not(:disabled) {
-  background-color: #218838;
+.claims-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.text-bg-info {
+.claims-table th,
+.claims-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.claims-table th {
   background-color: #17a2b8;
-  color: #ffffff;
+  color: white;
 }
 
-.text-center {
+.claims-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.claims-table tr:hover {
+  background-color: #ddd;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: bold;
   text-align: center;
+}
+
+.status-approved {
+  background-color: #28a745;
+  width: auto;
+}
+
+.status-rejected {
+  background-color: #dc3545;
+  width: 89px;
+}
+
+.status-verifying-validating {
+  background-color: #ffc107;
+}
+
+.status-pending {
+  background-color: #007bff;
+  width: 89px;
+}
+
+#claim_status {
+  width: 100%;
 }

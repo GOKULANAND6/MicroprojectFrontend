@@ -1,107 +1,99 @@
-/* Overall container styling */
-.container {
-    margin-top: 20px;
-  }
-  
-  /* Customer cards styling */
-  .customer-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .customer-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 10px;
-    padding: 20px;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .customer-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Card header styling */
-  .customer-card-header {
-    border-bottom: 2px solid #007bff;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-  }
-  
-  .customer-card-header h2 {
-    font-size: 1.25rem;
-    color: #007bff;
-  }
-  
-  /* Card body styling */
-  .customer-card-body {
-    margin-bottom: 15px;
-  }
-  
-  .customer-detail {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .customer-detail strong {
-    color: #333;
-  }
-  
-  /* Card footer styling */
-  .customer-card-footer {
-    text-align: center;
-  }
-  
-  #policybutton {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  #policybutton:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Title styling */
-  .text-bg-info {
-    background-color: #17a2b8;
-    color: #ffffff;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .go-back-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  
-  .logo {
-    width: 40px; 
-    height: auto;
-  }
+.view-cars-container {
+  padding: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #f4f4f9;
+  border-radius: 8px;
+}
 
-  .banner {
-    display: flex;
-    align-items: center;
-    background-color: #17a2b8;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
+.view-cars-banner {
+  display: flex;
+  align-items: center;
+  background-color: #17a2b8;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  #app2 {
-    color: #fff;
-    margin-left: 370px ;
-  }
+.go-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.banner-title {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.cars-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+}
+
+.cars-table th,
+.cars-table td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+.cars-table th {
+  background-color: #e9ecef;
+  font-weight: bold;
+  color: #333;
+}
+
+.cars-table td {
+  background-color: #ffffff;
+  color: #666;
+}
+
+.cars-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cars-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-info {
+  font-size: 1rem;
+  padding: 10px 0px ;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  background-color: #17a2b8;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  height: 60px;
+  width: 150px;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-info:active {
+  background-color: #117a8b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-info:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(23, 162, 184, 0.5);
+}

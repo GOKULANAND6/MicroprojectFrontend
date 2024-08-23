@@ -10,18 +10,16 @@ function ViewClaim2() {
   const [customerID, setCustomerID] = useState(null);
   const navigate = useNavigate();
 
-  // Fetch customer ID from session storage
   useEffect(() => {
     const storedInsurance = sessionStorage.getItem("loggedInUser");
     if (storedInsurance) {
       const parsedInsurance = JSON.parse(storedInsurance);
-      setCustomerID(parsedInsurance.customer_id); // Adjust based on how customer ID is stored
+      setCustomerID(parsedInsurance.customer_id);
     } else {
       setError("No customer ID found in session storage.");
     }
   }, []);
 
-  // Fetch and filter claims
   useEffect(() => {
     if (customerID) {
       const fetchCustomerClaims = async () => {
@@ -60,60 +58,58 @@ function ViewClaim2() {
         <h1 className="banner-title text-dark">Applied for Insurance Claim</h1>
       </header>
 
-        <div className="claims-container">
-          {error && <p className="error-message">{error}</p>}
-          {records.map((d, i) => (
-            <div className="claim-card" key={i}>
-              <h2 className="claim-title">Claim Issue: {d.claim_issue}</h2>
-              <div className="claim-details">
-                <div className="claim-row">
-                  <div className="claim-label">Customer Name:</div>
-                  <div className="claim-value">{d.carinsurance?.customer?.customer_name}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Customer Email:</div>
-                  <div className="claim-value">{d.carinsurance?.customer?.customer_email}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Customer Mobile:</div>
-                  <div className="claim-value">{d.carinsurance?.customer?.customer_mobile}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Car Brand:</div>
-                  <div className="claim-value">{d.car_make}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Car Name:</div>
-                  <div className="claim-value">{d.car_name}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Car Model:</div>
-                  <div className="claim-value">{d.car_model}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Car Year:</div>
-                  <div className="claim-value">{d.car_year}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Car Registered On:</div>
-                  <div className="claim-value">{d.car_buyingdate}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Car Number:</div>
-                  <div className="claim-value">{d.car_number}</div>
-                </div>
-                <div className="claim-row">
-                  <div className="claim-label">Claim Status:</div>
-                  <div className="claim-value">
-                    <span className="claim-status-button">{d.claim_status}</span>
-                  </div>
-                </div>
+      {error && <p className="error-message">{error}</p>}
+
+      <div className="card-container">
+        {records.map((claim, index) => (
+          <div className="card" key={index}>
+            <h2 className="card-title">{claim.claim_issue}</h2>
+            <div className="card-content">
+              <div className="card-item">
+                <span className="card-label">Customer Name:</span>
+                <span className="card-value">{claim.carinsurance?.customer?.customer_name}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Customer Email:</span>
+                <span className="card-value">{claim.carinsurance?.customer?.customer_email}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Customer Mobile:</span>
+                <span className="card-value">{claim.carinsurance?.customer?.customer_mobile}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Car Brand:</span>
+                <span className="card-value">{claim.car_make}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Car Name:</span>
+                <span className="card-value">{claim.car_name}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Car Model:</span>
+                <span className="card-value">{claim.car_model}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Car Year:</span>
+                <span className="card-value">{claim.car_year}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Car Registered On:</span>
+                <span className="card-value">{claim.car_buyingdate}</span>
+              </div>
+              <div className="card-item">
+                <span className="card-label">Car Number:</span>
+                <span className="card-value">{claim.car_number}</span>
+              </div>
+              <div className={`card-status-button ${claim.claim_status.toLowerCase()}`}>
+                {claim.claim_status}
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </div>
+      </div>
+      </div>
   );
 }
 

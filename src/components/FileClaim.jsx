@@ -100,6 +100,7 @@ function FileClaim() {
             <label htmlFor="claim_issue"><FaFileSignature /> Claim Reason:</label>
             <select
               name="claim_issue"
+              id="claim_issue"
               className="form-control"
               value={inputData.claim_issue}
               onChange={handleChange}

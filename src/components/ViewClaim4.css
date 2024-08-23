@@ -1,80 +1,133 @@
-/* Overall container styling */
 .container {
-    margin-top: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #f4f4f9;
+  border-radius: 8px;
+}
+
+.view-cars-banner {
+  display: flex;
+  align-items: center;
+  background-color: #17a2b8;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.go-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.banner-title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.claims-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+}
+
+.claim-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.claim-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.claim-card-header {
+  border-bottom: 2px solid #007bff;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.claim-card-header h2 {
+  font-size: 1.25rem;
+  color: #007bff;
+  margin: 0;
+}
+
+.claim-card-body {
+  margin-bottom: 10px;
+}
+
+.claim-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  margin-bottom: 5px;
+}
+
+.claim-detail strong {
+  color: #333;
+  flex-basis: 40%;
+}
+
+.claim-detail span {
+  color: #666;
+  flex-basis: 60%;
+}
+
+.claim-card-footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 0.875rem;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-success:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.card-status-button{
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .claims-list {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Card styling */
-  .claim-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    transition: box-shadow 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .claims-list {
+    grid-template-columns: 1fr;
   }
-  
-  .claim-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Card header styling */
-  .claim-card-header {
-    border-bottom: 2px solid #007bff;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-  }
-  
-  .claim-card-header h2 {
-    font-size: 1.5rem;
-    color: #007bff;
-  }
-  
-  .claim-card-body {
-    margin-bottom: 15px;
-  }
-  
-  .claim-detail {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .claim-detail strong {
-    color: #333;
-  }
-  
-  /* Card footer styling */
-  .claim-card-footer {
-    margin-top: -20px;
-    text-align: center;
-  }
-  
-  .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    color: #ffffff;
-  }
-  
-  .btn-success:disabled {
-    background-color: #6c757d;
-  }
-  
-  .btn-success:hover:not(:disabled) {
-    background-color: #218838;
-  }
-  
-  .text-bg-info {
-    background-color: #17a2b8;
-    color: #ffffff;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
+}

@@ -8,7 +8,7 @@
   
   .hero-image {
     background-color: lightcyan;
-    background-image: url('http://localhost:3000/static/media/image.1fe44c83dab456afa711.jpg');
+    background-image: url('https://cambridgefidelitybenefits.com/images/background/bg01.jpg');
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     background-size: cover;
@@ -21,12 +21,12 @@
   
   @media (max-width: 768px) {
     .hero-image {
-      height: 50vh; /* Adjust if needed */
+      height: 50vh; 
     }
   }
   
   .container {
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 0 1rem;
   }

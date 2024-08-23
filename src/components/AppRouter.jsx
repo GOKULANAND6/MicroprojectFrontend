@@ -34,7 +34,7 @@ function AppRouter() {
             <Route path="/buycarinsurance" element={<BuyCarInsurance />} />
             <Route path="/fileclaim" element={<FileClaim />} />
             <Route path="/viewcustomerdetails" element={<ViewCustomer />} />
-            <Route path="/viewpolicy" element={<ViewPolicy />} />
+            <Route path="/viewpolicy/:id" element={<ViewPolicy />} />
             <Route path="/viewclaim" element={<ViewClaim />} />
             <Route path="/viewClaim1/:id" element={<ViewClaim1 />} />
             <Route path="/viewclaim2" element={<ViewClaim2 />} />

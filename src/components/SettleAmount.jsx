@@ -5,169 +5,69 @@ import './BuyCarInsurance.css';
 
 function SettleAmount() {
   const location = useLocation();
-  const {id} = useParams();
+  const { id } = useParams();
   const claimJson = location.state?.claimJson || '{}';
   const claim = JSON.parse(claimJson);
-  console.log(claim);
-  
-  const [record, setRecord] = useState(claim);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [record, setRecord] = useState();
+
   const [inputData, setInputData] = useState({
     settlement_amount: "",
-    settlement_status: "",
-    insuranceclaim: 
-    {
-      claim_id: "",
-      claim_issue: "",
-      car_make: "",
-      car_name: "",
-      car_model: "",
-      car_year: "",
-      car_buyingdate: "",
-      car_number: "",
-      claim_status: "",
-      carinsurance: 
-          {
-            policy_id: "",
-            policy_name: "",
-            policy_scheme: "",
-            car_make: "",
-            car_name: "",
-            car_model: " ",
-            car_year: "",
-            car_buyingdate: "",
-            car_number: "",
-            policy_amount: "" ,
-            customer: 
-            {
-                customer_id: "",
-                customer_name: "",
-                customer_email: "",
-                customer_mobile: "",
-                customer_address: "",
-                customer_pincode: "",
-                customer_dob: "",
-                customer_age: "",
-                customer_gender: "",
-                customer_password: ""
-            }
-      }
-    }  
+    settlement_status: ""
   });
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get(`http://localhost:8051/claim/${id}`)
       .then((response) => {
-        setRecord(response.data);
-        console.log(response.data)
+        setRecord(response.data.carinsurance.customer.customer_name)
+        setInputData(prev => ({
+          ...prev,
+          settlement_amount: response.data.settlement_amount || "",
+          settlement_status: response.data.settlement_status || ""
+        }));
       })
       .catch((err) => {
         console.log("Error fetching claims:", err);
       });
-  }, []);
+  }, [id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const result = validateValues(inputData);
-
-    if (result) {
-      axios.post("http://localhost:8051/settlement", {
-        settlement_amount: inputData.settlement_amount,
-        settlement_status: inputData.settlement_status,
-        insuranceclaim: { 
-          claim_id: record.claim_id,
-          claim_issue: record.claim_issue,
-          car_make: record.car_make,
-          car_name: record.car_name,
-          car_model: record.car_model,
-          car_year: record.car_year,
-          car_buyingdate: record.car_buyingdate,
-          car_number: record.car_number,
-          claim_status: record.claim_status,
-          carinsurance:{
-            policy_id: record.carinsurance.policy_id,
-            policy_name: record.carinsurance.policy_name,
-            policy_scheme: record.carinsurance.policy_scheme,
-            car_make: record.carinsurance.car_make,
-            car_name: record.carinsurance.car_name,
-            car_model: record.carinsurance.car_model,
-            car_year: record.carinsurance.car_year,
-            car_buyingdate: record.carinsurance.car_buyingdate,
-            car_number: record.carinsurance.car_number,
-            policy_amount: record.carinsurance.policy_amount,
-            customer: 
-            {
-              customer_id: record.carinsurance.customer.customer_id,
-              customer_name: record.carinsurance.customer.customer_name,
-              customer_email: record.carinsurance.customer.customer_email,
-              customer_mobile: record.carinsurance.customer.customer_mobile,
-              customer_address: record.carinsurance.customer.customer_address,
-              customer_pincode: record.carinsurance.customer.customer_pincode,
-              customer_dob: record.carinsurance.customer.customer_dob,
-              customer_age: record.carinsurance.customer.customer_age,
-              customer_gender: record.carinsurance.customer.customer_gender,
-              customer_password: record.carinsurance.customer.customer_password
-            }
-          }
-         }
-      })
-      .then((res) => {
-        console.log(res.data);
-        sessionStorage.setItem('Settlement', JSON.stringify(res.data)); 
-        alert("Successfully Credited the Amount to the Customer");
-        navigate("/landingpage3");
-      })
-      .catch((err) => console.error('Error submitting the form:', err));
-    } else {
-      alert("Please enter valid inputs!!!");
+    if (!inputData.settlement_amount || !inputData.settlement_status) {
+      alert("Please fill all fields.");
+      return;
     }
-  };
 
-  const validateValues = (data) => {
-    if (!data.settlement_status) {
-      alert("Please select the Status !!!");
-      return false;
-    } else {
-      return true;
-    }
+    axios.post("http://localhost:8051/settlement", {
+      claim_id: id,
+      settlement_amount: inputData.settlement_amount,
+      settlement_status: inputData.settlement_status
+    })
+    .then(() => {
+      alert("Successfully Credited the Amount to the Customer");
+      navigate("/viewclaim4"); 
+    })
+    .catch((err) => console.error('Error submitting the form:', err));
   };
-
-  if (loading) return <div className="text-center">Loading...</div>;
-  if (error) return <div className="text-center">{error}</div>;
 
   return (
     <div id="add2" className="d-flex w-100 vh-100 justify-content-center align-items-center">
       <div className="w-50 border bg-light p-5">
         <form onSubmit={handleSubmit}>
-          <h1>Fill the following details</h1>
+          <h1>Update Settlement Status </h1>
           <br />
-
-          <div>
-            <label htmlFor="claim_id">Claim Id:</label>
-            <input
-              type="number"
-              name="claim_id"
-              className="form-control"
-              value={record.claim_id}
-              readOnly
-            />
-          </div>
-
           <div>
             <label htmlFor="customer_name">Customer Name:</label>
             <input
               type="text"
               name="customer_name"
               className="form-control"
-              value={record.carinsurance?.customer.customer_name}
+              value={record}
               readOnly
             />
           </div>
-
           <div>
             <label htmlFor="settlement_amount">Settlement Amount:</label>
             <input
@@ -180,7 +80,6 @@ function SettleAmount() {
               }
             />
           </div>
-
           <div>
             <label htmlFor="settlement_status">Settlement Status:</label>
             <select
@@ -193,11 +92,10 @@ function SettleAmount() {
             >
               <option value="" disabled>Select Status</option>
               <option value="Credited">Credited</option>
+              <option value="Fake Reports">Fake Reports</option>
             </select>
           </div>
-
           <br />
-
           <button className="btn btn-info">Submit</button>
         </form>
       </div>

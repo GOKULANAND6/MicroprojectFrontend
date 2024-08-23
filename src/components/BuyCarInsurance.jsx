@@ -22,7 +22,7 @@ function BuyCarInsurance() {
   });
 
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     const customerData = sessionStorage.getItem("loggedInUser");
 
@@ -121,6 +121,7 @@ function BuyCarInsurance() {
             </label>
             <select
               name="policy_name"
+              id="policy_name"
               className="form-control"
               value={inputData.policy_name}
               onChange={handlePolicyNameChange}

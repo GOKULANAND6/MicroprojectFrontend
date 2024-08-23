@@ -1,83 +1,114 @@
-/* Overall container styling */
-.container-fluid {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  max-width: 1200px; /* Limit the maximum width for better readability */
-  margin: 0 auto; /* Center align the container */
 }
 
-h1.text-center {
-  background-color: #17a2b8; /* Blue background */
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  font-size: 24px; /* Larger title font size */
-}
-
-.claims-container {
+.header {
   display: flex;
-  flex-direction: column;
-  gap: 15px; /* Space between cards */
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.claim-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  max-width: 100%;
+.go-back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.claim-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
+.logo {
+  height: 30px;
 }
 
-.claim-details {
-  display: table;
-  width: 100%;
-  border-spacing: 0;
-}
-
-.claim-row {
-  display: table-row;
-}
-
-.claim-label, .claim-value {
-  display: table-cell;
-  padding: 10px;
-  vertical-align: top;
-}
-
-.claim-label {
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-  width: 30%; /* Adjust width as necessary */
-}
-
-.claim-value {
-  width: 70%;
-  border-bottom: 1px solid #ddd;
-}
-
-.claim-status-button {
-  display: inline-block;
-  background-color: darkgreen; /* Blue background for the button-like element */
-  color: rgb(255, 255, 255);
-  padding: 8px 16px; /* Larger padding for a button-like appearance */
-  border-radius: 5px; /* Rounded corners for button look */
-  font-weight: bold;
-  text-align: center;
-  cursor: default; /* Show default cursor to indicate non-clickable */
-  user-select: none; /* Prevent text selection */
-  font-size: 16px; /* Font size for button text */
-  margin-top: -5px; /* Margin to separate from other elements */
+.title {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-left: 20px;
 }
 
 .error-message {
   color: red;
   font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(33% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #333;
   margin-bottom: 15px;
-  font-size: 16px; /* Ensure the error message is visible */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.card-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.card-value {
+  color: #666;
+}
+
+.card-value.amount {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.card-status-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
+
+.card-status-button.pending {
+  background-color: #ffc107;
+}
+
+.card-status-button.approved {
+  background-color: #28a745;
+}
+
+.card-status-button.rejected {
+  background-color: #dc3545;
 }
